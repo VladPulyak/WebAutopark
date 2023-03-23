@@ -1,0 +1,12 @@
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\bin\Debug\net7.0\DataLayer.deps.json
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\bin\Debug\net7.0\DataLayer.dll
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\bin\Debug\net7.0\DataLayer.pdb
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.csproj.AssemblyReference.cache
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.AssemblyInfoInputs.cache
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.AssemblyInfo.cs
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.csproj.CoreCompileInputs.cache
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.dll
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\refint\DataLayer.dll
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\DataLayer.pdb
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\DataLayer\obj\Debug\net7.0\ref\DataLayer.dll
