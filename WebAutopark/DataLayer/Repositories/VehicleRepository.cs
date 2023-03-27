@@ -15,13 +15,13 @@ namespace DataLayer.Repositories
 {
     public sealed class VehicleRepository : IVehicleRepository
     {
-        private readonly string _connectionString = "Server=localhost;Database=WebAutopark;Trusted_Connection=True;Encrypt=False;";
-        //public VehicleRepository(string connectionString)
-        //{
-        //    _connectionString = connectionString;
-        //}
+        private readonly string _connectionString;
+        public VehicleRepository(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
-        public Task Add(Vehicles vehicle)
+        public async Task Add(Vehicles vehicle)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -36,45 +36,58 @@ namespace DataLayer.Repositories
                                     @Color,
                                     @FuelConsumption
                                 )";
-                //connection.ExecuteAsync(sqlQuery, new
-                //{
-                //    VehicleTypeId = vehicle.VehicleTypeId,
-                //    Model = vehicle.Model,
-                //    RegistrationNumber = vehicle.RegistrationNumber,
-                //    Weight = vehicle.Weight,
-                //    Year = vehicle.Year,
-                //    Mileage = vehicle.Mileage,
-                //    Color = vehicle.Color,
-                //    FuelConsumption = vehicle.FuelConsumption
-                //});
-                var list = connection.QueryAsync<Vehicles>(sqlQuery, vehicle).Result.ToList();
+                await connection.ExecuteAsync(sqlQuery, vehicle);
             }
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var sqlQuery = "delete from Vehicles where VehicleId = @id";
-                var list = connection.QueryAsync<Vehicles>(sqlQuery, new {id = id}).Result.ToList();
+                await connection.ExecuteAsync(sqlQuery, new { id = id });
             }
-            return Task.CompletedTask;
         }
 
-        public Task<List<Vehicles>> GetAll()
+        public async Task<IEnumerable<Vehicles>> GetAll()
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = "select * from Vehicles";
+                return await connection.QueryAsync<Vehicles>(sqlQuery);
+            }
         }
 
-        public Task<Vehicles> GetById()
+        public async Task<Vehicles> GetById(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = "select * from Vehicles where VehicleId = @id";
+                return await connection.QuerySingleAsync<Vehicles>(sqlQuery, new { id = id });
+            }
         }
 
-        public Task<Vehicles> Update(Vehicles vehicle)
+        public async Task Update(int id, Vehicles vehicle)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = @"Update Vehicles set Color = @Color,FuelConsumption = @FuelConsumption,
+                                                     Mileage = @Mileage, Model = @Model, RegistrationNumber = @RegistrationNumber,
+                                                     VehicleTypeId = @VehicleTypeId, Weight = @Weight, Year = @Year
+                                                     where VehicleId = @id";
+                await connection.ExecuteAsync(sqlQuery, new
+                {
+                    Color = vehicle.Color,
+                    FuelConsumption = vehicle.FuelConsumption,
+                    Mileage = vehicle.Mileage,
+                    Model = vehicle.Model,
+                    RegistrationNumber = vehicle.RegistrationNumber,
+                    VehicleTypeId = vehicle.VehicleTypeId,
+                    Weight = vehicle.Weight,
+                    Year = vehicle.Year,
+                    id = id
+                });
+            }
         }
     }
 }

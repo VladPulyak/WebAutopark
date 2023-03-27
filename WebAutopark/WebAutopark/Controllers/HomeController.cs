@@ -17,12 +17,17 @@ namespace WebAutopark.Controllers
             _vehicleRepository = vehicleRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> AddVehicle()
         {
             var vehicle = new Vehicles()
             {
                 VehicleTypeId = 1,
-                Model = "Citroen C4",
+                Model = "LAmborgini Aventador",
                 RegistrationNumber = "1234 AA-5",
                 Weight = 2.2,
                 Year = DateTime.Now,
@@ -30,9 +35,41 @@ namespace WebAutopark.Controllers
                 Color = Color.White.ToString(),
                 FuelConsumption = 7.6
             };
-            //await _vehicleRepository.Add(vehicle);
-            await _vehicleRepository.Delete(1);
-            return View();
+            await _vehicleRepository.Add(vehicle);
+            return RedirectToAction("GetAllVehicles", "Home");
+        }
+
+        public async Task<IActionResult> DeleteVehicleById()
+        {
+            await _vehicleRepository.Delete(4);
+            return RedirectToAction("GetAllVehicles", "Home");
+        }
+        public async Task<IActionResult> GetAllVehicles()
+        {
+            var listWithVehicles = await _vehicleRepository.GetAll();
+            return View(listWithVehicles);
+        }
+        public async Task<IActionResult> GetVehicleById()
+        {
+            var vehicle = await _vehicleRepository.GetById(19);
+            return View(vehicle);
+        }
+
+        public async Task<IActionResult> UpdateVehicle()
+        {
+            var vehicle = new Vehicles()
+            {
+                VehicleTypeId = 1,
+                Model = "Porsche Cayeene GTS V8 BiTurbo",
+                RegistrationNumber = "1234 AA-5",
+                Weight = 2.2,
+                Year = DateTime.Now,
+                Mileage = 20000,
+                Color = Color.White.ToString(),
+                FuelConsumption = 7.6
+            };
+            await _vehicleRepository.Update(5, vehicle);
+            return RedirectToAction("GetAllVehicles", "Home");
         }
 
         public IActionResult Privacy()

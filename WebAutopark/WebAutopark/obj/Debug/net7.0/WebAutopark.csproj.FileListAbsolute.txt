@@ -29,6 +29,9 @@ D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\De
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\Debug\net7.0\WebAutopark.pdb
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\Debug\net7.0\WebAutopark.genruntimeconfig.cache
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\Debug\net7.0\ref\WebAutopark.dll
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\DataLayer.dll
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\DataLayer.pdb
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\Debug\net7.0\WebAutopark.csproj.CopyComplete
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\Azure.Core.dll
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\Azure.Identity.dll
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\Dapper.dll
@@ -64,6 +67,3 @@ D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\De
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\DataLayer.dll
-D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\DataLayer.pdb
-D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\Debug\net7.0\WebAutopark.csproj.CopyComplete

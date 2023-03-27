@@ -3,7 +3,7 @@ using DataLayer.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRepositories();
+builder.Services.AddRepositories(builder.Configuration.GetConnectionString("DefaultConnection"));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/GetAllVehicles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRBbGxWZWhpY2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/GetVehicleById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRWZWhpY2xlQnlJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

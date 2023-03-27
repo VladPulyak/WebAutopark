@@ -12,9 +12,10 @@ namespace DataLayer.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddRepositories(this IServiceCollection service)
+        public static void AddRepositories(this IServiceCollection service, string connectionString)
         {
-            service.AddScoped<IVehicleRepository, VehicleRepository>();
+            service.AddScoped<IVehicleRepository, VehicleRepository>(provider => new VehicleRepository(connectionString));
+            service.AddScoped<IVehicleTypesRepository, VehicleTypesRepository>(provider => new VehicleTypesRepository(connectionString));
         }
     }
 }
