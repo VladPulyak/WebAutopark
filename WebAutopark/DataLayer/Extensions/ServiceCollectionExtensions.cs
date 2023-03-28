@@ -16,6 +16,9 @@ namespace DataLayer.Extensions
         {
             service.AddScoped<IVehicleRepository, VehicleRepository>(provider => new VehicleRepository(connectionString));
             service.AddScoped<IVehicleTypesRepository, VehicleTypesRepository>(provider => new VehicleTypesRepository(connectionString));
+            service.AddScoped<IOrderItemsRepository, OrderItemsRepository>(provider => new OrderItemsRepository(connectionString));
+            service.AddScoped<IOrdersRepository, OrdersRepository>(provider => new OrdersRepository(connectionString));
+            service.AddScoped<IComponentsRepository, ComponentsRepository>(provider => new ComponentsRepository(connectionString));
         }
     }
 }
