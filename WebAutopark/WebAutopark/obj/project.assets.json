@@ -995,6 +995,16 @@
           }
         }
       },
+      "BusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
       "DataLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2760,6 +2770,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLayer/BusinessLayer.csproj",
+      "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
     "DataLayer/1.0.0": {
       "type": "project",
       "path": "../DataLayer/DataLayer.csproj",
@@ -2768,6 +2783,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BusinessLayer >= 1.0.0",
       "DataLayer >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 7.0.4"
     ]
@@ -2799,6 +2815,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj"
+            },
             "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj": {
               "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj"
             }

@@ -1,6 +1,8 @@
 ﻿using DataLayer.Entities;
 using DataLayer.Repositories.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
+using WebAutopark.Mappers;
+using WebAutopark.Models;
 
 namespace WebAutopark.Controllers
 {
@@ -15,11 +17,9 @@ namespace WebAutopark.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddVehicle(Vehicles vehicle, string vehicleTypeName)
+        public async Task<IActionResult> AddVehicle(VehicleViewModel vehicle)
         {
-            var vehicleType = _vehicleTypesRepository.GetAll().Result.First(q => q.Name == vehicleTypeName);
-            vehicle.VehicleTypeId = vehicleType.VehicleTypeId;
-            await _vehicleRepository.Add(vehicle);
+            await _vehicleRepository.Add(VehicleMappers.MapFromVehiclesVMToVehicles(vehicle, await _vehicleTypesRepository.GetAll()));
             return RedirectToAction("GetAllVehicles", "Vehicle");
         }
 
@@ -35,26 +35,30 @@ namespace WebAutopark.Controllers
         }
         public async Task<IActionResult> GetAllVehicles()
         {
-            var listWithVehicles = await _vehicleRepository.GetAll();
-            return View(listWithVehicles);
+            var vehicleTypes = await _vehicleTypesRepository.GetAll();
+            var vehicles = await _vehicleRepository.GetAll();
+            var vehiclesViewModels = new List<VehicleViewModel>();
+            foreach (var vehicle in vehicles)
+            {
+                vehiclesViewModels.Add(VehicleMappers.MapFromVehiclesToVehiclesVM(vehicle, vehicleTypes));
+            }
+            return View(vehiclesViewModels);
         }
-        [HttpPost]
         public async Task<IActionResult> GetVehicleById(int vehicleId)
         {
-            var vehicle = await _vehicleRepository.GetById(vehicleId);
-            return View(vehicle);
+            var vehicleViewModel = VehicleMappers.MapFromVehiclesToVehiclesVM(await _vehicleRepository.GetById(vehicleId), await _vehicleTypesRepository.GetAll());
+            return View(vehicleViewModel);
         }
         [HttpGet]
         public async Task<IActionResult> UpdateVehicle(int vehicleId)
         {
-            var vehicle = await _vehicleRepository.GetById(vehicleId);
-            return View(vehicle);
+            var vehicleViewModel = VehicleMappers.MapFromVehiclesToVehiclesVM(await _vehicleRepository.GetById(vehicleId), await _vehicleTypesRepository.GetAll());
+            return View(vehicleViewModel);
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateVehicle(Vehicles vehicle, string vehicleTypeName)
+        public async Task<IActionResult> UpdateVehicle(VehicleViewModel vehicleViewModel)
         {
-            vehicle.VehicleTypeId = _vehicleTypesRepository.GetAll().Result.First(q => q.Name == vehicleTypeName).VehicleTypeId;
-            await _vehicleRepository.Update(vehicle.VehicleId, vehicle);
+            await _vehicleRepository.Update(vehicleViewModel.VehicleId, VehicleMappers.MapFromVehiclesVMToVehicles(vehicleViewModel, await _vehicleTypesRepository.GetAll()));
             return RedirectToAction("GetAllVehicles", "Vehicle");
         }
     }

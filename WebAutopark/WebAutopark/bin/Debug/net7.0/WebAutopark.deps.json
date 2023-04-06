@@ -35,6 +35,7 @@
     ".NETCoreApp,Version=v7.0": {
       "WebAutopark/1.0.0": {
         "dependencies": {
+          "BusinessLayer": "1.0.0",
           "DataLayer": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "7.0.4",
           "Microsoft.AspNetCore.Antiforgery": "7.0.0.0",
@@ -986,6 +987,14 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
           }
+        }
+      },
+      "BusinessLayer/1.0.0": {
+        "runtime": {
+          "BusinessLayer.dll": {}
+        },
+        "compile": {
+          "BusinessLayer.dll": {}
         }
       },
       "DataLayer/1.0.0": {
@@ -3155,6 +3164,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DataLayer/1.0.0": {
       "type": "project",

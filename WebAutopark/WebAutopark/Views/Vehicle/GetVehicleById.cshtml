@@ -1,4 +1,4 @@
-﻿@model Vehicles
+﻿@model VehicleViewModel
 
 
 <div>
@@ -8,15 +8,15 @@
 <table class="table">
     <thead>
         <tr>
-            <th>VehicleId</th>
-            <th>VehicleTypeId</th>
+            <th>Vehicle Id</th>
+            <th>VehicleType Name</th>
             <th>Model</th>
-            <th>RegistrationNumber</th>
+            <th>Registration Number</th>
             <th>Weight</th>
             <th>Year</th>
             <th>Mileage</th>
             <th>Color</th>
-            <th>FuelConsumption</th>
+            <th>Fuel Consumption</th>
             <th>FuelConsumption</th>
             <th>FuelConsumption</th>
         </tr>
@@ -24,7 +24,7 @@
     <tbody>
         <tr>
             <td>@Model.VehicleId</td>
-            <td>@Model.VehicleTypeId</td>
+            <td>@Model.VehicleTypeName</td>
             <td>@Model.Model</td>
             <td>@Model.RegistrationNumber</td>
             <td>@Model.Weight</td>

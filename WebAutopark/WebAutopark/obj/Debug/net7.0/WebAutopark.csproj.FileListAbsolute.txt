@@ -397,3 +397,5 @@ D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\De
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\obj\Debug\net7.0\WebAutopark.MvcApplicationPartsAssemblyInfo.cs
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\BusinessLayer.dll
+D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\bin\Debug\net7.0\BusinessLayer.pdb

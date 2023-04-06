@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAutopark", "WebAutopark\WebAutopark.csproj", "{D84FD707-E730-43D0-A028-4BA839A2D808}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAutopark", "WebAutopark\WebAutopark.csproj", "{D84FD707-E730-43D0-A028-4BA839A2D808}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{9854430B-6373-4035-AAFA-EAA685E12950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{9854430B-6373-4035-AAFA-EAA685E12950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{BF48A9A1-2AD5-4797-82F4-E238D54629B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9854430B-6373-4035-AAFA-EAA685E12950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9854430B-6373-4035-AAFA-EAA685E12950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9854430B-6373-4035-AAFA-EAA685E12950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF48A9A1-2AD5-4797-82F4-E238D54629B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF48A9A1-2AD5-4797-82F4-E238D54629B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF48A9A1-2AD5-4797-82F4-E238D54629B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF48A9A1-2AD5-4797-82F4-E238D54629B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

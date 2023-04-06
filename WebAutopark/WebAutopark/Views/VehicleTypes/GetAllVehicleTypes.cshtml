@@ -4,25 +4,10 @@
     <div>
         <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(0,0,0);margin-bottom: 14px;">VehicleTypes Information</h1>
     </div>
-    <div class="container d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="d-flex justify-content-center" style="margin: 5px;">
-                    <button class="btn btn-success" type="submit">
-                        <a asp-action="AddVehicleType" asp-controller="VehicleTypes" style="text-decoration: none; color: #fff; font-size:20px;">Add VehicleType</a>
-                    </button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <form asp-action="GetVehicleTypeById" asp-controller="VehicleTypes" method="post">
-                    <div class="d-flex justify-content-center" style="margin: 5px;">
-                        <label class="form-label" style="font-size: 25px;">VehicleTypeId</label>
-                        <input name="vehicleTypeId" id="vehicleTypeId" type="number" style="width: 90px;margin-left: 6px;margin-right: 6px;border-radius: 9px;border-width: 3px;font-size: 25px;text-align: center;" min="1" />
-                        <button class="btn btn-info" type="submit" style="font-size: 20px;">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="d-flex justify-content-center" style="margin: 5px;">
+        <button class="btn btn-success" type="submit">
+            <a asp-action="AddVehicleType" asp-controller="VehicleTypes" style="text-decoration: none; color: #fff; font-size:20px;">Add VehicleType</a>
+        </button>
     </div>
     <div>
         <div class="table-responsive" style="border-radius: 21px; border-width: 2px;">
