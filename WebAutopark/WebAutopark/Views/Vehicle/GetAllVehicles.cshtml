@@ -4,6 +4,26 @@
     <div>
         <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(0,0,0);margin-bottom: 14px;">Vehicles Information</h1>
     </div>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center" style="margin: 5px;">
+                    <button class="btn btn-success" type="submit">
+                        <a asp-action="AddVehicle" asp-controller="Vehicle" style="text-decoration: none; color: #fff; font-size:20px;">Add Vehicle</a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form asp-action="GetVehicleById" asp-controller="Vehicle" method="post">
+                    <div class="d-flex justify-content-center" style="margin: 5px;">
+                        <label class="form-label" style="font-size: 25px;">VehicleId</label>
+                        <input name="vehicleId" id="vehicleId" type="number" style="width: 90px;margin-left: 6px;margin-right: 6px;border-radius: 9px;border-width: 3px;font-size: 25px;text-align: center;" min="1" />
+                        <button class="btn btn-info" type="submit" style="font-size: 20px;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div>
         <div class="table-responsive" style="border-radius: 21px; border-width: 2px;">
             <table class="table">
@@ -17,8 +37,6 @@
                         <th>Year</th>
                         <th>Mileage</th>
                         <th>Color</th>
-                        <th>FuelConsumption</th>
-                        <th>FuelConsumption</th>
                         <th>FuelConsumption</th>
                         <th></th>
                         <th></th>
@@ -37,10 +55,16 @@
                             <td>@vehicle.Mileage</td>
                             <td>@vehicle.Color</td>
                             <td>@vehicle.FuelConsumption</td>
-                            <td>@vehicle.FuelConsumption</td>
-                            <td>@vehicle.FuelConsumption</td>
-                            <td><button class="btn btn-danger" type="submit">Delete</button></td>
-                            <td><button class="btn btn-primary" type="submit">Update</button></td>
+                            <td>
+                                <button class="btn btn-danger" type="submit">
+                                    @Html.ActionLink("Delete","DeleteVehicleById","Vehicle",new{vehicle.VehicleId}, new {style = "text-decoration: none; color: #fff"})
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" type="submit">
+                                    @Html.ActionLink("Change","UpdateVehicle","Vehicle",new{vehicle.VehicleId}, new {style = "text-decoration: none; color: #fff"})
+                                </button>
+                            </td>
                         </tr>
                     }
                 </tbody>
