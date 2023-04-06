@@ -8,6 +8,7 @@ namespace DataLayer.Repositories.RepositoryInterfaces
 {
     public interface IRepository<T> where T : class
     {
+        Task CreateTable();
         Task<T> GetById(int id);
         Task<IEnumerable<T>> GetAll();
         Task Add(T entity);

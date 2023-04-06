@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Vehicles>
+
+<body>
+    <div>
+        <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(0,0,0);margin-bottom: 14px;">Vehicles Information</h1>
+    </div>
+    <div>
+        <div class="table-responsive" style="border-radius: 21px; border-width: 2px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>VehicleId</th>
+                        <th>VehicleTypeId</th>
+                        <th>Model</th>
+                        <th>RegistrationNumber</th>
+                        <th>Weight</th>
+                        <th>Year</th>
+                        <th>Mileage</th>
+                        <th>Color</th>
+                        <th>FuelConsumption</th>
+                        <th>FuelConsumption</th>
+                        <th>FuelConsumption</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var vehicle in Model)
+                    {
+                        <tr>
+                            <td>@vehicle.VehicleId</td>
+                            <td>@vehicle.VehicleTypeId</td>
+                            <td>@vehicle.Model</td>
+                            <td>@vehicle.RegistrationNumber</td>
+                            <td>@vehicle.Weight</td>
+                            <td>@vehicle.Year</td>
+                            <td>@vehicle.Mileage</td>
+                            <td>@vehicle.Color</td>
+                            <td>@vehicle.FuelConsumption</td>
+                            <td>@vehicle.FuelConsumption</td>
+                            <td>@vehicle.FuelConsumption</td>
+                            <td><button class="btn btn-danger" type="submit">Delete</button></td>
+                            <td><button class="btn btn-primary" type="submit">Update</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

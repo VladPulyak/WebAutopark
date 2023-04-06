@@ -12,17 +12,9 @@ build_property.RootNamespace = WebAutopark
 build_property.ProjectDir = D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark
 build_property._RazorSourceGeneratorDebug = 
-
-[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/GetAllVehicles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRBbGxWZWhpY2xlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/GetVehicleById.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRWZWhpY2xlQnlJZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
 
 [D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
@@ -38,6 +30,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/AddVehicle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxBZGRWZWhpY2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/GetAllVehicles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxHZXRBbGxWZWhpY2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/GetVehicleById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxHZXRWZWhpY2xlQnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/_ViewImports.cshtml]

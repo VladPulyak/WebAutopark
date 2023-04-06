@@ -1,0 +1,53 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Untitled</title>
+</head>
+
+<body class="BGAddVehicle">
+    <div>
+        <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(255,255,255);margin-bottom: 14px;">Add Vehicle</h1>
+    </div>
+    <form class="justify-content-center" method="post">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="vehicleTypeName">Name of VehicleType</label><input id="vehicleTypeName" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="vehicleTypeName" /></div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Model">Model</label><input id="Model" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="Model" /></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="RegistrationNumber">Registration Number</label><input id="RegistrationNumber" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="RegistrationNumber" /></div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Weight">Weight</label><input id="Weight" class="form-control" type="number" style="width: 324px;font-size: 30px;border-radius: 7px;" required step="0.1" name="Weight" min="0" /></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Year">Year</label><input id="Year" class="form-control" type="month" name="Year" style="border-radius: 7px;font-size: 30px;width: 324px;" /></div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Mileage">Mileage</label><input id="Mileage" class="form-control" type="number" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="Mileage" min="0" /></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Color">Color</label><input id="Color" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="Color" /></div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="FuelConsumption">FuelConsumption</label><input id="FuelConsumption" class="form-control" type="number" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="FuelConsumption" step="0.1" min="0" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center"><button class="btn btn-primary" type="submit" style="margin: 5px;font-size: 25px;margin-top: 10px;background: rgb(68,113,183);border-color: rgb(68,113,183);border-radius: 7px;">Button</button></div>
+    </form>
+</body>
+</html>

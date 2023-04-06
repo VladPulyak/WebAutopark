@@ -8,13 +8,19 @@ namespace WebAutopark.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IVehicleRepository _vehicleRepository;
+        private readonly IOrdersRepository _ordersRepository;
+        private readonly IOrderItemsRepository _orderItemsRepository;
+        private readonly IComponentsRepository _componentsRepository;
+        private readonly IVehicleTypesRepository _vehicleTypesRepository;
 
-        public HomeController(ILogger<HomeController> logger, IVehicleRepository vehicleRepository)
+        public HomeController(IVehicleRepository vehicleRepository, IOrdersRepository ordersRepository, IOrderItemsRepository orderItemsRepository, IComponentsRepository componentsRepository, IVehicleTypesRepository vehicleTypesRepository)
         {
-            _logger = logger;
             _vehicleRepository = vehicleRepository;
+            _ordersRepository = ordersRepository;
+            _componentsRepository = componentsRepository;
+            _vehicleTypesRepository = vehicleTypesRepository;
+            _orderItemsRepository = orderItemsRepository;
         }
 
         public IActionResult Index()
@@ -22,59 +28,14 @@ namespace WebAutopark.Controllers
             return View();
         }
 
-        public async Task<IActionResult> AddVehicle()
+        public async Task<IActionResult> CreateTables()
         {
-            var vehicle = new Vehicles()
-            {
-                VehicleTypeId = 1,
-                Model = "LAmborgini Aventador",
-                RegistrationNumber = "1234 AA-5",
-                Weight = 2.2,
-                Year = DateTime.Now,
-                Mileage = 20000,
-                Color = Color.White.ToString(),
-                FuelConsumption = 7.6
-            };
-            await _vehicleRepository.Add(vehicle);
-            return RedirectToAction("GetAllVehicles", "Home");
-        }
-
-        public async Task<IActionResult> DeleteVehicleById()
-        {
-            await _vehicleRepository.Delete(4);
-            return RedirectToAction("GetAllVehicles", "Home");
-        }
-        public async Task<IActionResult> GetAllVehicles()
-        {
-            var listWithVehicles = await _vehicleRepository.GetAll();
-            return View(listWithVehicles);
-        }
-        public async Task<IActionResult> GetVehicleById()
-        {
-            var vehicle = await _vehicleRepository.GetById(19);
-            return View(vehicle);
-        }
-
-        public async Task<IActionResult> UpdateVehicle()
-        {
-            var vehicle = new Vehicles()
-            {
-                VehicleTypeId = 1,
-                Model = "Porsche Cayeene GTS V8 BiTurbo",
-                RegistrationNumber = "1234 AA-5",
-                Weight = 2.2,
-                Year = DateTime.Now,
-                Mileage = 20000,
-                Color = Color.White.ToString(),
-                FuelConsumption = 7.6
-            };
-            await _vehicleRepository.Update(5, vehicle);
-            return RedirectToAction("GetAllVehicles", "Home");
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            await _vehicleTypesRepository.CreateTable();
+            await _vehicleRepository.CreateTable();
+            await _componentsRepository.CreateTable();
+            await _ordersRepository.CreateTable();
+            await _orderItemsRepository.CreateTable();
+            return RedirectToAction("Index", "Home");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -30,6 +30,20 @@ namespace DataLayer.Repositories
             }
         }
 
+        public async Task CreateTable()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = @"create table VehicleTypes
+                                (
+                                VehicleTypeId int primary key identity(1,1) not null,
+                                Name nvarchar(50) not null,
+                                TaxCoefficient float not null
+                                )";
+                await connection.ExecuteAsync(sqlQuery);
+            }
+        }
+
         public async Task Delete(int id)
         {
             using (var connection = new SqlConnection(_connectionString))

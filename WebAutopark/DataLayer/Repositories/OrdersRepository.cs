@@ -32,6 +32,21 @@ namespace DataLayer.Repositories
             }
         }
 
+        public async Task CreateTable()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = @"create table Orders
+                                (
+                                OrderId int primary key identity(1,1) not null,
+                                VehicleId int not null,
+                                Date datetime not null,
+                                constraint FK_VehicleId foreign key (VehicleId) references Vehicles(VehicleId)
+                                )";
+                await connection.ExecuteAsync(sqlQuery);
+            }
+        }
+
         public async Task Delete(int id)
         {
             using (var connection = new SqlConnection(_connectionString))

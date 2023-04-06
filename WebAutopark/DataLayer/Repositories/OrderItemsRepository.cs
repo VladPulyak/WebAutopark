@@ -32,6 +32,22 @@ namespace DataLayer.Repositories
                 await connection.ExecuteAsync(sqlQuery, orderItem);
             }
         }
+        public async Task CreateTable()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = @"create table OrderItems
+                                (
+                                OrderItemId int primary key identity(1,1) not null,
+                                OrderId int not null,
+                                ComponentId int not null,
+                                Quantity int not null,
+                                constraint FK_OrderId foreign key (OrderId) references Orders(OrderId),
+                                constraint FK_ComponentId foreign key (ComponentId) references Components(ComponentId)
+                                )";
+                await connection.ExecuteAsync(sqlQuery);
+            }
+        }
 
         public async Task Delete(int id)
         {

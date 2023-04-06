@@ -1,0 +1,39 @@
+﻿@model Vehicles
+
+
+<div>
+    <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(1,1,1);margin-bottom: 14px;">Vehicle with Id = @Model.VehicleId</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>VehicleId</th>
+            <th>VehicleTypeId</th>
+            <th>Model</th>
+            <th>RegistrationNumber</th>
+            <th>Weight</th>
+            <th>Year</th>
+            <th>Mileage</th>
+            <th>Color</th>
+            <th>FuelConsumption</th>
+            <th>FuelConsumption</th>
+            <th>FuelConsumption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.VehicleId</td>
+            <td>@Model.VehicleTypeId</td>
+            <td>@Model.Model</td>
+            <td>@Model.RegistrationNumber</td>
+            <td>@Model.Weight</td>
+            <td>@Model.Year</td>
+            <td>@Model.Mileage</td>
+            <td>@Model.Color</td>
+            <td>@Model.FuelConsumption</td>
+            <td>@Model.FuelConsumption</td>
+            <td>@Model.FuelConsumption</td>
+        </tr>
+    </tbody>
+</table>
