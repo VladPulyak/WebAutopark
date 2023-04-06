@@ -25,8 +25,9 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a class="nav-link px-2" style="font-size: 20px;color: #ffffff;font-weight: bold;" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li style="font-size: 20px;color: #ffffff;"><a class="nav-link px-2" asp-controller="Vehicle" asp-action="GetAllVehicles" style="font-size: 20px;color: #cfcfcf;">Vehicles</a></li>
-                    <li style="font-size: 20px;color: #cfcfcf;"><a class="nav-link px-2" href="#" style="font-size: 20px;color: #cfcfcf;">VehicleTypes</a></li>
-                    <li style="font-size: 20px;color: #cfcfcf;"><a class="nav-link px-2" href="#" style="font-size: 20px;color: #cfcfcf;">Orders</a></li>
+                    <li style="font-size: 20px;color: #cfcfcf;"><a class="nav-link px-2" asp-controller="VehicleTypes" asp-action="GetAllVehicleTypes" style="font-size: 20px;color: #cfcfcf;">VehicleTypes</a></li>
+                    <li style="font-size: 20px;color: #cfcfcf;"><a class="nav-link px-2" asp-controller="Vehicle" asp-action="GetAllVehicles"  style="font-size: 20px;color: #cfcfcf;">Orders</a></li>
+                    <li style="font-size: 20px;color: #cfcfcf;"><a class="nav-link px-2" asp-controller="Components" asp-action="GetAllComponents"  style="font-size: 20px;color: #cfcfcf;">Components</a></li>
                 </ul>
             </div>
         </div>

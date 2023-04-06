@@ -1,0 +1,21 @@
+﻿@model Components
+
+
+<div>
+    <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(1,1,1);margin-bottom: 14px;">Component with Id = @Model.ComponentId</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ComponentId</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.ComponentId</td>
+            <td>@Model.Name</td>
+        </tr>
+    </tbody>
+</table>

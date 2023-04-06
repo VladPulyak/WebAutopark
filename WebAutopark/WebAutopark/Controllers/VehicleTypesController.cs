@@ -1,4 +1,5 @@
 ﻿using DataLayer.Entities;
+using DataLayer.Repositories;
 using DataLayer.Repositories.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,43 +12,33 @@ namespace WebAutopark.Controllers
         {
             _vehicleTypesRepository = vehicleTypesRepository;
         }
-
-        public async Task<IActionResult> AddVehicleType()
+        [HttpGet]
+        public IActionResult AddVehicleType()
         {
-            var vehicleType = new VehicleTypes()
-            {
-                Name = "Car",
-                TaxCoefficient = 7.8
-            };
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddVehicleType(VehicleTypes vehicleType)
+        {
             await _vehicleTypesRepository.Add(vehicleType);
             return RedirectToAction("GetAllVehicleTypes", "VehicleTypes");
         }
 
-        public async Task<IActionResult> DeleteVehicleTypeById()
+        public async Task<IActionResult> DeleteVehicleTypeById(int vehicleTypeId)
         {
-            await _vehicleTypesRepository.Delete(4);
+            await _vehicleTypesRepository.Delete(vehicleTypeId);
             return RedirectToAction("GetAllVehicleTypes", "VehicleTypes");
         }
         public async Task<IActionResult> GetAllVehicleTypes()
         {
-            var listWithVehicles = await _vehicleTypesRepository.GetAll();
-            return View(listWithVehicles);
+            var listWithVehicleTypes = await _vehicleTypesRepository.GetAll();
+            return View(listWithVehicleTypes);
         }
-        public async Task<IActionResult> GetVehicleTypesById()
+        [HttpPost]
+        public async Task<IActionResult> GetVehicleTypeById(int vehicleTypeId)
         {
-            var vehicle = await _vehicleTypesRepository.GetById(19);
-            return View(vehicle);
-        }
-
-        public async Task<IActionResult> UpdateVehicleType()
-        {
-            var vehicleType = new VehicleTypes()
-            {
-                Name = "Bus",
-                TaxCoefficient = 7.8
-            };
-            await _vehicleTypesRepository.Update(5, vehicleType);
-            return RedirectToAction("GetAllVehicleTypes", "VehicleTypes");
+            var vehicleType = await _vehicleTypesRepository.GetById(vehicleTypeId);
+            return View(vehicleType);
         }
     }
 }
