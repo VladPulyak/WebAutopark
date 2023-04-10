@@ -12,6 +12,7 @@
         public string Mileage { get; set; }
         public string Color { get; set; }
         public string FuelConsumption { get; set; }
+        public string TankCapacity { get; set; }
         public string TaxPerMonth { get; set; }
         public string MaxKilometersOnTank { get; set; }
     }

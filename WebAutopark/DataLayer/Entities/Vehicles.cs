@@ -17,5 +17,6 @@ namespace DataLayer.Entities
         public int Mileage { get; set; }
         public string Color { get; set; }
         public double FuelConsumption { get; set; }
+        public int TankCapacity { get; set; }
     }
 }

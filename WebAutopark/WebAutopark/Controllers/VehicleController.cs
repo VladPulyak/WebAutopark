@@ -59,6 +59,7 @@ namespace WebAutopark.Controllers
             var vehicleTypes = await _vehicleTypesRepository.GetAll();
             var concreteVehicle = VehicleMappers.MapFromVehicleToConreteVehicle(vehicle, vehicleTypes);
             VehicleService.GetTaxPerMonth(concreteVehicle, vehicleTypes.Single(q => q.VehicleTypeId == vehicle.VehicleTypeId).TaxCoefficient);
+            VehicleService.GetMaxKilometersOnTank(concreteVehicle);
             var vehicleGetByIdViewModel = VehicleMappers.MapFromConcreteVehicleToVehiclesGetByIdVM(concreteVehicle, vehicleTypes);
             return View(vehicleGetByIdViewModel);
         }

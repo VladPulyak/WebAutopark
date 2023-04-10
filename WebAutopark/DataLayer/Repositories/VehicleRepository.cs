@@ -25,7 +25,7 @@ namespace DataLayer.Repositories
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var sqlQuery = @"insert into Vehicles (VehicleTypeId, Model, RegistrationNumber, Weight, Year, Mileage, Color, FuelConsumption) values
+                var sqlQuery = @"insert into Vehicles (VehicleTypeId, Model, RegistrationNumber, Weight, Year, Mileage, Color, FuelConsumption, TankCapacity) values
                                 (
                                     @VehicleTypeId,
                                     @Model,
@@ -34,7 +34,8 @@ namespace DataLayer.Repositories
                                     @Year,
                                     @Mileage,
                                     @Color,
-                                    @FuelConsumption
+                                    @FuelConsumption,
+                                    @TankCapacity
                                 )";
                 await connection.ExecuteAsync(sqlQuery, vehicle);
             }
@@ -54,7 +55,8 @@ namespace DataLayer.Repositories
                                 Year int not null,
                                 Mileage int not null,
                                 Color nvarchar(50) not null,
-                                FuelConsumption float not null
+                                FuelConsumption float not null,
+                                TankCapacity int not null,
                                 constraint FK_VehicleTypeId foreign key (VehicleTypeId) references VehicleTypes(VehicleTypeId)
                                 )";
                 await connection.ExecuteAsync(sqlQuery);
@@ -94,7 +96,7 @@ namespace DataLayer.Repositories
             {
                 var sqlQuery = @"Update Vehicles set Color = @Color,FuelConsumption = @FuelConsumption,
                                                      Mileage = @Mileage, Model = @Model, RegistrationNumber = @RegistrationNumber,
-                                                     VehicleTypeId = @VehicleTypeId, Weight = @Weight, Year = @Year
+                                                     VehicleTypeId = @VehicleTypeId, Weight = @Weight, Year = @Year, TankCapacity =                       @TankCapacity
                                                      where VehicleId = @id";
                 await connection.ExecuteAsync(sqlQuery, new
                 {
@@ -106,6 +108,7 @@ namespace DataLayer.Repositories
                     VehicleTypeId = vehicle.VehicleTypeId,
                     Weight = vehicle.Weight,
                     Year = vehicle.Year,
+                    TankCapacity = vehicle.TankCapacity,
                     id = id
                 });
             }

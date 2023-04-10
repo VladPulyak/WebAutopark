@@ -2,7 +2,7 @@
 
 
 <div>
-    <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(1,1,1);margin-bottom: 14px;">Vehicle with Id = @Model.VehicleId</h1>
+    <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(1,1,1);margin-bottom: 14px;">Info about @Model.Model, @Model.Year year with Registration number @Model.RegistrationNumber</h1>
 </div>
 
 <table class="table">
@@ -17,8 +17,9 @@
             <th>Mileage</th>
             <th>Color</th>
             <th>Fuel Consumption</th>
+            <th>Tank Capacity</th>
             <th>Tax Per Month</th>
-            <th>FuelConsumption</th>
+            <th>Max Kilometers On Tank</th>
         </tr>
     </thead>
     <tbody>
@@ -32,8 +33,9 @@
             <td>@Model.Mileage</td>
             <td>@Model.Color</td>
             <td>@Model.FuelConsumption</td>
+            <td>@Model.TankCapacity</td>
             <td>@Model.TaxPerMonth</td>
-            <td>@Model.FuelConsumption</td>
+            <td>@Model.MaxKilometersOnTank</td>
         </tr>
     </tbody>
 </table>

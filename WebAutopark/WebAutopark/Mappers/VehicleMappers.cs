@@ -19,7 +19,8 @@ namespace WebAutopark.Mappers
                 VehicleTypeId = vehicle.VehicleTypeId,
                 Weight = vehicle.Weight.ToString(),
                 Year = vehicle.Year.ToString(),
-                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name
+                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name,
+                TankCapacity = vehicle.TankCapacity.ToString()
             };
         }
 
@@ -38,6 +39,7 @@ namespace WebAutopark.Mappers
             bool isParsedWeight = double.TryParse(vehicleViewModel.Weight, out var weight);
             bool isParsedMileage = int.TryParse(vehicleViewModel.Mileage, out var mileage);
             bool isParsedYear = int.TryParse(vehicleViewModel.Year, out var year);
+            bool isParsedTankCapacity = int.TryParse(vehicleViewModel.TankCapacity, out var tankCapacity);
             if (isParsedFuelConsumption)
             {
                 vehicle.FuelConsumption = fuelConsumption;
@@ -53,6 +55,10 @@ namespace WebAutopark.Mappers
             if (isParsedYear)
             {
                 vehicle.Year = year;
+            }
+            if (isParsedTankCapacity)
+            {
+                vehicle.TankCapacity = tankCapacity;
             }
             listWithVehicles.Add(vehicle);
             return vehicle;
@@ -71,7 +77,8 @@ namespace WebAutopark.Mappers
                 VehicleTypeId = vehicle.VehicleTypeId,
                 Weight = vehicle.Weight,
                 Year = vehicle.Year,
-                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name
+                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name,
+                TankCapacity = vehicle.TankCapacity
             };
         }
 
@@ -87,7 +94,8 @@ namespace WebAutopark.Mappers
                 FuelConsumption = concreteVehicles.FuelConsumption,
                 Mileage = concreteVehicles.Mileage,
                 Weight = concreteVehicles.Weight,
-                Year = concreteVehicles.Year
+                Year = concreteVehicles.Year,
+                TankCapacity = concreteVehicles.TankCapacity
             };
         }
 
@@ -106,7 +114,8 @@ namespace WebAutopark.Mappers
                 Year = concreteVehicles.Year.ToString(),
                 VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == concreteVehicles.VehicleTypeId).Single().Name,
                 TaxPerMonth = concreteVehicles.TaxPerMonth.ToString(),
-                MaxKilometersOnTank = concreteVehicles.MaxKilometersOnTank.ToString()
+                MaxKilometersOnTank = concreteVehicles.MaxKilometersOnTank.ToString(),
+                TankCapacity = concreteVehicles.TankCapacity.ToString()
             };
         }
 

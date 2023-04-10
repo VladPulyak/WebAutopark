@@ -23,6 +23,7 @@
                         <th>Mileage</th>
                         <th>Color</th>
                         <th>Fuel Consumption</th>
+                        <th>Tank Capacity</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -41,6 +42,7 @@
                             <td>@vehicle.Mileage</td>
                             <td>@vehicle.Color</td>
                             <td>@vehicle.FuelConsumption</td>
+                            <td>@vehicle.TankCapacity</td>
                             <td>
                                 <button class="btn btn-info" type="submit">
                                     @Html.ActionLink("Details","GetVehicleById","Vehicle",new{vehicle.VehicleId}, new {style = "text-decoration: none; color: #fff"})

@@ -13,9 +13,9 @@ namespace BusinessLayer.Services
         {
             concreteVehicles.TaxPerMonth = (concreteVehicles.Weight * 0.013) + (taxCoefficient * 30) + 5;
         }
-        public static void GetMaxKilometersOnTank(ConcreteVehicles concreteVehicles, double taxCoefficient)
+        public static void GetMaxKilometersOnTank(ConcreteVehicles concreteVehicles)
         {
-            concreteVehicles.TaxPerMonth = (concreteVehicles.Weight * 0.013) + (taxCoefficient * 30) + 5;
+            concreteVehicles.MaxKilometersOnTank = (concreteVehicles.TankCapacity / concreteVehicles.FuelConsumption) * 100;
         }
 
     }
