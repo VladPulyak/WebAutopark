@@ -13,7 +13,7 @@ namespace DataLayer.Entities
         public string Model { get; set; }
         public string? RegistrationNumber { get; set; }
         public double Weight { get; set; }
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
         public int Mileage { get; set; }
         public string Color { get; set; }
         public double FuelConsumption { get; set; }

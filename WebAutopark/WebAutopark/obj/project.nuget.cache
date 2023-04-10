@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8RyLNglIUZlFJu6DcL1kpeRVVsDni3mujRmw49NKvbdc0F+2DTRBC3iziH3LLKWsAbmIswaRpkuSp3DY/Qqpwg==",
+  "dgSpecHash": "Zo7idRTy7zT+3rOHczeW4aOQGU5xNnhXStMBtVDiHVCFc30wEoneF+/oa/EdrTRZ6KNM4cUFcoIx/WxMZyp6ag==",
   "success": true,
-  "projectFilePath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\WebAutopark\\WebAutopark.csproj",
+  "projectFilePath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\WebAutopark\\WebAutopark.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vladp\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\vladp\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

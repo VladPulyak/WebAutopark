@@ -15,11 +15,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-end">
-                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="VehicleTypeName">Name of VehicleType</label><input id="VehicleTypeName" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="VehicleTypeName" /></div>
+                        <div style="margin-left: 11px;margin-bottom: 8px;">
+                            <label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="VehicleTypeName">Name of VehicleType</label>
+                            <select class="form-control" id="VehicleTypeName" name="VehicleTypeName" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" value="none">
+                                <option selected disabled>Enter vehicle type</option>
+                                @foreach (var name in ViewBag.ListWithVehicleTypes as List<string>)
+                                {
+                                    <option>@name</option>
+                                }
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-6 d-flex justify-content-start">
                         <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Model">Model</label><input id="Model" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="Model" /></div>
-                    </div>
+                    </div>`
                 </div>
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-end">

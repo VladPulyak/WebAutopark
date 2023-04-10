@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\WebAutopark\\WebAutopark.csproj": {}
+    "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\WebAutopark\\WebAutopark.csproj": {}
   },
   "projects": {
-    "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj": {
+    "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\vladp\\.nuget\\packages\\",
-        "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\obj\\",
+        "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vladp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj": {
+    "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj",
+        "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\vladp\\.nuget\\packages\\",
-        "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\obj\\",
+        "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vladp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,14 +128,14 @@
         }
       }
     },
-    "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\WebAutopark\\WebAutopark.csproj": {
+    "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\WebAutopark\\WebAutopark.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\WebAutopark\\WebAutopark.csproj",
+        "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\WebAutopark\\WebAutopark.csproj",
         "projectName": "WebAutopark",
-        "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\WebAutopark\\WebAutopark.csproj",
+        "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\WebAutopark\\WebAutopark.csproj",
         "packagesPath": "C:\\Users\\vladp\\.nuget\\packages\\",
-        "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\WebAutopark\\obj\\",
+        "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\WebAutopark\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vladp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -152,11 +152,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj"
+              "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj"
+              "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj"
               }
             }
           }

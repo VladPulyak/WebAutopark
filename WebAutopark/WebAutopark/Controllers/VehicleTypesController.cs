@@ -2,6 +2,8 @@
 using DataLayer.Repositories;
 using DataLayer.Repositories.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
+using WebAutopark.Mappers;
+using WebAutopark.Models;
 
 namespace WebAutopark.Controllers
 {
@@ -18,9 +20,9 @@ namespace WebAutopark.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddVehicleType(VehicleTypes vehicleType)
+        public async Task<IActionResult> AddVehicleType(VehicleTypeViewModel vehicleTypeViewModel)
         {
-            await _vehicleTypesRepository.Add(vehicleType);
+            await _vehicleTypesRepository.Add(VehicleTypeMappers.MapFromVehicleTypeVMToVehicleType(vehicleTypeViewModel));
             return RedirectToAction("GetAllVehicleTypes", "VehicleTypes");
         }
 
@@ -32,13 +34,12 @@ namespace WebAutopark.Controllers
         public async Task<IActionResult> GetAllVehicleTypes()
         {
             var listWithVehicleTypes = await _vehicleTypesRepository.GetAll();
-            return View(listWithVehicleTypes);
-        }
-        [HttpPost]
-        public async Task<IActionResult> GetVehicleTypeById(int vehicleTypeId)
-        {
-            var vehicleType = await _vehicleTypesRepository.GetById(vehicleTypeId);
-            return View(vehicleType);
+            var listWithVehicleTypeVM = new List<VehicleTypeViewModel>();
+            foreach (var vehicleType in listWithVehicleTypes)
+            {
+                listWithVehicleTypeVM.Add(VehicleTypeMappers.MapFromVehicleTypeToVehicleTypeVM(vehicleType));
+            }
+            return View(listWithVehicleTypeVM);
         }
     }
 }

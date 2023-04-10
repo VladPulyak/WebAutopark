@@ -1,4 +1,4 @@
-﻿@model VehicleTypes
+﻿@model VehicleTypeViewModel
 
 <div>
     <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(1,1,1);margin-bottom: 14px;">VehicleType with Id = @Model.VehicleTypeId</h1>
@@ -7,14 +7,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>VehicleTypeId</th>
             <th>Name</th>
             <th>TaxCoefficient</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th>@Model.VehicleTypeId</th>
             <th>@Model.Name</th>
             <th>@Model.TaxCoefficient</th>
         </tr>

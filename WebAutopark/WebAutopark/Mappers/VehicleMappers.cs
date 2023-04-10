@@ -1,4 +1,5 @@
-﻿using DataLayer.Entities;
+﻿using BusinessLayer.DTOs;
+using DataLayer.Entities;
 using WebAutopark.Models;
 
 namespace WebAutopark.Mappers
@@ -17,35 +18,10 @@ namespace WebAutopark.Mappers
                 VehicleId = vehicle.VehicleId,
                 VehicleTypeId = vehicle.VehicleTypeId,
                 Weight = vehicle.Weight.ToString(),
-                Year = vehicle.Year,
+                Year = vehicle.Year.ToString(),
                 VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name
             };
         }
-
-
-        //public static IEnumerable<VehicleViewModel> MapFromVehiclesToVehiclesVM(IEnumerable<Vehicles> listWithVehicles, IEnumerable<VehicleTypes> vehicleTypes)
-        //{
-        //    var listWithVehiclesViewModels = new List<VehicleViewModel>();
-        //    foreach (var vehicle in listWithVehicles)
-        //    {
-        //        listWithVehiclesViewModels.Add(new VehicleViewModel
-        //        {
-        //            Color = vehicle.Color,
-        //            FuelConsumption = vehicle.FuelConsumption.ToString(),
-        //            Mileage = vehicle.Mileage,
-        //            Model = vehicle.Model,
-        //            RegistrationNumber = vehicle.RegistrationNumber,
-        //            VehicleId = vehicle.VehicleId,
-        //            VehicleTypeId = vehicle.VehicleTypeId,
-        //            Weight = vehicle.Weight.ToString(),
-        //            Year = vehicle.Year,
-        //            VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name
-        //        });
-        //    }
-        //    return listWithVehiclesViewModels;
-        //}
-
-
 
         public static Vehicles MapFromVehiclesVMToVehicles(VehicleViewModel vehicleViewModel, IEnumerable<VehicleTypes> vehicleTypes)
         {
@@ -56,12 +32,12 @@ namespace WebAutopark.Mappers
                 Model = vehicleViewModel.Model,
                 RegistrationNumber = vehicleViewModel.RegistrationNumber,
                 VehicleId = vehicleViewModel.VehicleId,
-                Year = vehicleViewModel.Year,
                 VehicleTypeId = vehicleTypes.Where(q => q.Name == vehicleViewModel.VehicleTypeName).Single().VehicleTypeId,
             };
             bool isParsedFuelConsumption = double.TryParse(vehicleViewModel.FuelConsumption, out var fuelConsumption);
             bool isParsedWeight = double.TryParse(vehicleViewModel.Weight, out var weight);
             bool isParsedMileage = int.TryParse(vehicleViewModel.Mileage, out var mileage);
+            bool isParsedYear = int.TryParse(vehicleViewModel.Year, out var year);
             if (isParsedFuelConsumption)
             {
                 vehicle.FuelConsumption = fuelConsumption;
@@ -74,37 +50,99 @@ namespace WebAutopark.Mappers
             {
                 vehicle.Mileage = mileage;
             }
+            if (isParsedYear)
+            {
+                vehicle.Year = year;
+            }
             listWithVehicles.Add(vehicle);
             return vehicle;
         }
-        //public static IEnumerable<Vehicles> MapFromVehiclesVMToVehicles(List<VehicleViewModel> listWithVehiclesVM)
+
+        public static ConcreteVehicles MapFromVehicleToConreteVehicle(Vehicles vehicle, IEnumerable<VehicleTypes> vehicleTypes)
+        {
+            return new ConcreteVehicles
+            {
+                Color = vehicle.Color,
+                FuelConsumption = vehicle.FuelConsumption,
+                Mileage = vehicle.Mileage,
+                Model = vehicle.Model,
+                RegistrationNumber = vehicle.RegistrationNumber,
+                VehicleId = vehicle.VehicleId,
+                VehicleTypeId = vehicle.VehicleTypeId,
+                Weight = vehicle.Weight,
+                Year = vehicle.Year,
+                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name
+            };
+        }
+
+        public static Vehicles MapFromConreteVehicleToVehicle(ConcreteVehicles concreteVehicles, IEnumerable<VehicleTypes> vehicleTypes)
+        {
+            return new Vehicles
+            {
+                Color = concreteVehicles.Color,
+                Model = concreteVehicles.Model,
+                RegistrationNumber = concreteVehicles.RegistrationNumber,
+                VehicleId = concreteVehicles.VehicleId,
+                VehicleTypeId = vehicleTypes.Where(q => q.Name == concreteVehicles.VehicleTypeName).Single().VehicleTypeId,
+                FuelConsumption = concreteVehicles.FuelConsumption,
+                Mileage = concreteVehicles.Mileage,
+                Weight = concreteVehicles.Weight,
+                Year = concreteVehicles.Year
+            };
+        }
+
+        public static VehicleGetByIdViewModel MapFromConcreteVehicleToVehiclesGetByIdVM(ConcreteVehicles concreteVehicles, IEnumerable<VehicleTypes> vehicleTypes)
+        {
+            return new VehicleGetByIdViewModel
+            {
+                Color = concreteVehicles.Color,
+                FuelConsumption = concreteVehicles.FuelConsumption.ToString(),
+                Mileage = concreteVehicles.Mileage.ToString(),
+                Model = concreteVehicles.Model,
+                RegistrationNumber = concreteVehicles.RegistrationNumber,
+                VehicleId = concreteVehicles.VehicleId,
+                VehicleTypeId = concreteVehicles.VehicleTypeId,
+                Weight = concreteVehicles.Weight.ToString(),
+                Year = concreteVehicles.Year.ToString(),
+                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == concreteVehicles.VehicleTypeId).Single().Name,
+                TaxPerMonth = concreteVehicles.TaxPerMonth.ToString(),
+                MaxKilometersOnTank = concreteVehicles.MaxKilometersOnTank.ToString()
+            };
+        }
+
+        //public static ConcreteVehicles MapFromVehiclesGetByIdVMToConcreteVehicle(VehicleGetByIdViewModel vehicleViewModel, IEnumerable<VehicleTypes> vehicleTypes)
         //{
         //    var listWithVehicles = new List<Vehicles>();
-        //    foreach (var vehicleVM in listWithVehiclesVM)
+        //    var vehicle = new Vehicles
         //    {
-        //        var vehicle = new Vehicles
-        //        {
-        //            Color = vehicleVM.Color,
-        //            Mileage = vehicleVM.Mileage,
-        //            Model = vehicleVM.Model,
-        //            RegistrationNumber = vehicleVM.RegistrationNumber,
-        //            VehicleId = vehicleVM.VehicleId,
-        //            VehicleTypeId = vehicleVM.VehicleTypeId,
-        //            Year = vehicleVM.Year
-        //        };
-        //        bool isParsedFuelConsumption = double.TryParse(vehicleVM.FuelConsumption, out var fuelConsumption);
-        //        bool isParsedWeight = double.TryParse(vehicleVM.FuelConsumption, out var weight);
-        //        if (isParsedFuelConsumption)
-        //        {
-        //            vehicle.FuelConsumption = fuelConsumption;
-        //        }
-        //        if (isParsedWeight)
-        //        {
-        //            vehicle.Weight = weight;
-        //        }
-        //        listWithVehicles.Add(vehicle);
+        //        Color = vehicleViewModel.Color,
+        //        Model = vehicleViewModel.Model,
+        //        RegistrationNumber = vehicleViewModel.RegistrationNumber,
+        //        VehicleId = vehicleViewModel.VehicleId,
+        //        VehicleTypeId = vehicleTypes.Where(q => q.Name == vehicleViewModel.VehicleTypeName).Single().VehicleTypeId,
+        //    };
+        //    bool isParsedFuelConsumption = double.TryParse(vehicleViewModel.FuelConsumption, out var fuelConsumption);
+        //    bool isParsedWeight = double.TryParse(vehicleViewModel.Weight, out var weight);
+        //    bool isParsedMileage = int.TryParse(vehicleViewModel.Mileage, out var mileage);
+        //    bool isParsedYear = int.TryParse(vehicleViewModel.Year, out var year);
+        //    if (isParsedFuelConsumption)
+        //    {
+        //        vehicle.FuelConsumption = fuelConsumption;
         //    }
-        //    return listWithVehicles;
+        //    if (isParsedWeight)
+        //    {
+        //        vehicle.Weight = weight;
+        //    }
+        //    if (isParsedMileage)
+        //    {
+        //        vehicle.Mileage = mileage;
+        //    }
+        //    if (isParsedYear)
+        //    {
+        //        vehicle.Year = year;
+        //    }
+        //    listWithVehicles.Add(vehicle);
+        //    return vehicle;
         //}
     }
 }

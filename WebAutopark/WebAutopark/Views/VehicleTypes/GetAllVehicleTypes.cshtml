@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VehicleTypes>
+﻿@model IEnumerable<VehicleTypeViewModel>
 
 <body>
     <div>
@@ -14,7 +14,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>VehicleTypeId</th>
                         <th>Name</th>
                         <th>TaxCoefficient</th>
                         <th></th>
@@ -24,7 +23,6 @@
                     @foreach (var vehicleType in Model)
                     {
                         <tr>
-                            <td>@vehicleType.VehicleTypeId</td>
                             <td>@vehicleType.Name</td>
                             <td>@vehicleType.TaxCoefficient</td>
                             <td>

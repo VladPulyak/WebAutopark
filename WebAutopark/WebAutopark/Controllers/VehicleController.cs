@@ -1,6 +1,8 @@
-﻿using DataLayer.Entities;
+﻿using BusinessLayer.Services;
+using DataLayer.Entities;
 using DataLayer.Repositories.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebAutopark.Mappers;
 using WebAutopark.Models;
 
@@ -24,8 +26,15 @@ namespace WebAutopark.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddVehicle()
+        public async Task<IActionResult> AddVehicle()
         {
+            var listWithVehicleTypes = await _vehicleTypesRepository.GetAll();
+            var listWithNameOfTypes = new List<string>();
+            foreach (var vehicleType in listWithVehicleTypes)
+            {
+                listWithNameOfTypes.Add(vehicleType.Name);
+            }
+            ViewBag.ListWithVehicleTypes = listWithNameOfTypes;
             return View();
         }
         public async Task<IActionResult> DeleteVehicleById(int vehicleId)
@@ -46,12 +55,23 @@ namespace WebAutopark.Controllers
         }
         public async Task<IActionResult> GetVehicleById(int vehicleId)
         {
-            var vehicleViewModel = VehicleMappers.MapFromVehiclesToVehiclesVM(await _vehicleRepository.GetById(vehicleId), await _vehicleTypesRepository.GetAll());
-            return View(vehicleViewModel);
+            var vehicle = await _vehicleRepository.GetById(vehicleId);
+            var vehicleTypes = await _vehicleTypesRepository.GetAll();
+            var concreteVehicle = VehicleMappers.MapFromVehicleToConreteVehicle(vehicle, vehicleTypes);
+            VehicleService.GetTaxPerMonth(concreteVehicle, vehicleTypes.Single(q => q.VehicleTypeId == vehicle.VehicleTypeId).TaxCoefficient);
+            var vehicleGetByIdViewModel = VehicleMappers.MapFromConcreteVehicleToVehiclesGetByIdVM(concreteVehicle, vehicleTypes);
+            return View(vehicleGetByIdViewModel);
         }
         [HttpGet]
         public async Task<IActionResult> UpdateVehicle(int vehicleId)
         {
+            var listWithVehicleTypes = await _vehicleTypesRepository.GetAll();
+            var listWithNameOfTypes = new List<string>();
+            foreach (var vehicleType in listWithVehicleTypes)
+            {
+                listWithNameOfTypes.Add(vehicleType.Name);
+            }
+            ViewBag.ListWithVehicleTypes = listWithNameOfTypes;
             var vehicleViewModel = VehicleMappers.MapFromVehiclesToVehiclesVM(await _vehicleRepository.GetById(vehicleId), await _vehicleTypesRepository.GetAll());
             return View(vehicleViewModel);
         }

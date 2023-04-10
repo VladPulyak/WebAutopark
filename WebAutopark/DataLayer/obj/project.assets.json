@@ -2134,11 +2134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj",
       "projectName": "DataLayer",
-      "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\DataLayer.csproj",
+      "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\DataLayer.csproj",
       "packagesPath": "C:\\Users\\vladp\\.nuget\\packages\\",
-      "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\DataLayer\\obj\\",
+      "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vladp\\AppData\\Roaming\\NuGet\\NuGet.Config",

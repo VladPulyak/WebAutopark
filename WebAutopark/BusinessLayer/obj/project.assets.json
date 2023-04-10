@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\vladp\\.nuget\\packages\\",
-      "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\obj\\",
+      "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vladp\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -51,7 +51,7 @@ namespace DataLayer.Repositories
                                 Model nvarchar(50) not null,
                                 RegistrationNumber nvarchar(50) null,
                                 Weight float not null,
-                                Year datetime not null,
+                                Year int not null,
                                 Mileage int not null,
                                 Color nvarchar(50) not null,
                                 FuelConsumption float not null

@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebAutopark
 build_property.RootNamespace = WebAutopark
-build_property.ProjectDir = D:\.NET projects\DevIncubatorProjects\WebAutoparkfdfdfd\WebAutopark\WebAutopark\
+build_property.ProjectDir = D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\.NET projects\DevIncubatorProjects\WebAutoparkfdfdfd\WebAutopark\WebAutopark
+build_property.MSBuildProjectDirectory = D:\.NET projects\DevIncubatorProjects\WebAutopark\WebAutopark\WebAutopark
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Components/AddComponent.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Components/AddComponent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xBZGRDb21wb25lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Components/GetAllComponents.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Components/GetAllComponents.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xHZXRBbGxDb21wb25lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Components/GetComponentById.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Components/GetComponentById.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xHZXRDb21wb25lbnRCeUlkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Components/UpdateComponent.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Components/UpdateComponent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xVcGRhdGVDb21wb25lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Home/Index.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/VehicleTypes/AddVehicleType.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/VehicleTypes/AddVehicleType.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVR5cGVzXEFkZFZlaGljbGVUeXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/VehicleTypes/GetAllVehicleTypes.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/VehicleTypes/GetAllVehicleTypes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVR5cGVzXEdldEFsbFZlaGljbGVUeXBlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/VehicleTypes/GetVehicleTypeById.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/VehicleTypes/GetVehicleTypeById.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVR5cGVzXEdldFZlaGljbGVUeXBlQnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Vehicle/AddVehicle.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/AddVehicle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxBZGRWZWhpY2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Vehicle/GetAllVehicles.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/GetAllVehicles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxHZXRBbGxWZWhpY2xlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Vehicle/GetVehicleById.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/GetVehicleById.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxHZXRWZWhpY2xlQnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Vehicle/UpdateVehicle.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Vehicle/UpdateVehicle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxVcGRhdGVWZWhpY2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/_ViewImports.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/_ViewStart.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/.NET projects/DevIncubatorProjects/WebAutoparkfdfdfd/WebAutopark/WebAutopark/Views/Shared/_Layout.cshtml]
+[D:/.NET projects/DevIncubatorProjects/WebAutopark/WebAutopark/WebAutopark/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4s9poua061

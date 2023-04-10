@@ -1,8 +1,6 @@
-﻿using DataLayer.Entities;
-
-namespace WebAutopark.Models
+﻿namespace WebAutopark.Models
 {
-    public class VehicleViewModel
+    public class VehicleGetByIdViewModel
     {
         public int VehicleId { get; set; }
         public int VehicleTypeId { get; set; }
@@ -14,5 +12,7 @@ namespace WebAutopark.Models
         public string Mileage { get; set; }
         public string Color { get; set; }
         public string FuelConsumption { get; set; }
+        public string TaxPerMonth { get; set; }
+        public string MaxKilometersOnTank { get; set; }
     }
 }
