@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {}
+    "C:\\Users\\vladp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutopark\\WebAutopark\\BusinessLayer\\obj\\",
+      "projectPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\vladp\\.nuget\\packages\\",
+      "outputPath": "D:\\.NET projects\\DevIncubatorProjects\\WebAutoparkfdfdfd\\WebAutopark\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vladp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
