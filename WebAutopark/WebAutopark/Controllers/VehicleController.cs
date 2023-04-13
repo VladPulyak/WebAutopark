@@ -3,6 +3,7 @@ using DataLayer.Entities;
 using DataLayer.Repositories.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Reflection;
 using WebAutopark.Mappers;
 using WebAutopark.Models;
 
@@ -21,6 +22,7 @@ namespace WebAutopark.Controllers
         [HttpPost]
         public async Task<IActionResult> AddVehicle(VehicleViewModel vehicle)
         {
+
             await _vehicleRepository.Add(VehicleMappers.MapFromVehiclesVMToVehicles(vehicle, await _vehicleTypesRepository.GetAll()));
             return RedirectToAction("GetAllVehicles", "Vehicle");
         }
@@ -44,23 +46,32 @@ namespace WebAutopark.Controllers
         }
         public async Task<IActionResult> GetAllVehicles()
         {
-            var vehicleTypes = await _vehicleTypesRepository.GetAll();
             var vehicles = await _vehicleRepository.GetAll();
             var vehiclesViewModels = new List<VehicleViewModel>();
             foreach (var vehicle in vehicles)
             {
-                vehiclesViewModels.Add(VehicleMappers.MapFromVehiclesToVehiclesVM(vehicle, vehicleTypes));
+                vehiclesViewModels.Add(VehicleMappers.MapFromVehiclesToVehiclesVM(vehicle));
             }
             return View(vehiclesViewModels);
+        }
+        public async Task<IActionResult> Sort(string fieldName)
+        {
+            var listWithVehicles = await _vehicleRepository.Sort(fieldName);
+            var listWithVehiclesVM = new List<VehicleViewModel>();
+            foreach (var vehicle in listWithVehicles)
+            {
+                listWithVehiclesVM.Add(VehicleMappers.MapFromVehiclesToVehiclesVM(vehicle));
+            }
+            return View("GetAllVehicles", listWithVehiclesVM);
         }
         public async Task<IActionResult> GetVehicleById(int vehicleId)
         {
             var vehicle = await _vehicleRepository.GetById(vehicleId);
             var vehicleTypes = await _vehicleTypesRepository.GetAll();
-            var concreteVehicle = VehicleMappers.MapFromVehicleToConreteVehicle(vehicle, vehicleTypes);
+            var concreteVehicle = VehicleMappers.MapFromVehicleToConreteVehicle(vehicle);
             VehicleService.GetTaxPerMonth(concreteVehicle, vehicleTypes.Single(q => q.VehicleTypeId == vehicle.VehicleTypeId).TaxCoefficient);
             VehicleService.GetMaxKilometersOnTank(concreteVehicle);
-            var vehicleGetByIdViewModel = VehicleMappers.MapFromConcreteVehicleToVehiclesGetByIdVM(concreteVehicle, vehicleTypes);
+            var vehicleGetByIdViewModel = VehicleMappers.MapFromConcreteVehicleToVehiclesGetByIdVM(concreteVehicle);
             return View(vehicleGetByIdViewModel);
         }
         [HttpGet]
@@ -73,7 +84,7 @@ namespace WebAutopark.Controllers
                 listWithNameOfTypes.Add(vehicleType.Name);
             }
             ViewBag.ListWithVehicleTypes = listWithNameOfTypes;
-            var vehicleViewModel = VehicleMappers.MapFromVehiclesToVehiclesVM(await _vehicleRepository.GetById(vehicleId), await _vehicleTypesRepository.GetAll());
+            var vehicleViewModel = VehicleMappers.MapFromVehiclesToVehiclesVM(await _vehicleRepository.GetById(vehicleId));
             return View(vehicleViewModel);
         }
         [HttpPost]

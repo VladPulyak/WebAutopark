@@ -9,5 +9,6 @@ namespace DataLayer.Repositories.RepositoryInterfaces
 {
     public interface IVehicleRepository : IRepository<Vehicles>
     {
+        public Task<IEnumerable<Vehicles>> Sort(string field);
     }
 }

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OrderViewModel>
+
+<body>
+    <div>
+        <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(0,0,0);margin-bottom: 14px;">Orders Information</h1>
+    </div>
+    <div class="d-flex justify-content-center" style="margin: 5px;">
+        <button class="btn btn-success" type="submit">
+            <a asp-action="AddOrder" asp-controller="Order" style="text-decoration: none; color: #fff; font-size:20px;">Add Order</a>
+        </button>
+    </div>
+    <div>
+        <div class="table-responsive" style="border-radius: 21px; border-width: 2px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Vehicle model name</th>
+                        <th>Vehicle registration number</th>
+                        <th>Date of creating</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.VehicleModelName</td>
+                            <td>@order.VehicleRegistrationNumber</td>
+                            <td>@order.Date</td>
+                            <td>
+                                <button class="btn btn-info" type="submit">
+                                    @Html.ActionLink("Details","GetOrderDetails","Order",new{order.OrderId}, new {style = "text-decoration: none; color: #fff"})
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

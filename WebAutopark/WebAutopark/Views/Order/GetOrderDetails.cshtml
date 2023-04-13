@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ComponentViewModel>
+
+    @{
+        var vehicle = ViewBag.Vehicle as Vehicles;
+    }
+
+<div>
+    <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(1,1,1);margin-bottom: 14px;">Info about @vehicle.Model, @vehicle.Year year with Registration number @vehicle.RegistrationNumber</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Component Name</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var component in Model)
+        {
+            <tr>
+                <td>@component.ComponentName</td>
+                <td>@component.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

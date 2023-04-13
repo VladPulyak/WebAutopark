@@ -25,9 +25,10 @@ namespace DataLayer.Repositories
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var sqlQuery = @"insert into Vehicles (VehicleTypeId, Model, RegistrationNumber, Weight, Year, Mileage, Color, FuelConsumption, TankCapacity) values
+                var sqlQuery = @"insert into Vehicles (VehicleTypeId,VehicleTypeName, Model, RegistrationNumber, Weight, Year, Mileage, Color, FuelConsumption, TankCapacity) values
                                 (
                                     @VehicleTypeId,
+                                    @VehicleTypeName,                                    
                                     @Model,
                                     @RegistrationNumber,
                                     @Weight,
@@ -41,6 +42,16 @@ namespace DataLayer.Repositories
             }
         }
 
+        public async Task<IEnumerable<Vehicles>> Sort(string fieldName)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var sqlQuery = $"select * from Vehicles order by {fieldName}";
+                
+                return await connection.QueryAsync<Vehicles>(sqlQuery);
+            }
+        }
+
         public async Task CreateTable()
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -49,6 +60,7 @@ namespace DataLayer.Repositories
                                 (
                                 VehicleId int primary key identity(1,1) not null,
                                 VehicleTypeId int not null,
+                                VehicleTypeName nvarchar(50) not null,
                                 Model nvarchar(50) not null,
                                 RegistrationNumber nvarchar(50) null,
                                 Weight float not null,
@@ -96,7 +108,7 @@ namespace DataLayer.Repositories
             {
                 var sqlQuery = @"Update Vehicles set Color = @Color,FuelConsumption = @FuelConsumption,
                                                      Mileage = @Mileage, Model = @Model, RegistrationNumber = @RegistrationNumber,
-                                                     VehicleTypeId = @VehicleTypeId, Weight = @Weight, Year = @Year, TankCapacity =                       @TankCapacity
+                                                     VehicleTypeId = @VehicleTypeId, Weight = @Weight, Year = @Year, TankCapacity =                      @TankCapacity, VehicleTypeName = @VehicleTypeName
                                                      where VehicleId = @id";
                 await connection.ExecuteAsync(sqlQuery, new
                 {
@@ -109,6 +121,7 @@ namespace DataLayer.Repositories
                     Weight = vehicle.Weight,
                     Year = vehicle.Year,
                     TankCapacity = vehicle.TankCapacity,
+                    VehicleTypeName = vehicle.VehicleTypeName,
                     id = id
                 });
             }

@@ -6,7 +6,7 @@ namespace WebAutopark.Mappers
 {
     public static class VehicleMappers
     {
-        public static VehicleViewModel MapFromVehiclesToVehiclesVM(Vehicles vehicle, IEnumerable<VehicleTypes> vehicleTypes)
+        public static VehicleViewModel MapFromVehiclesToVehiclesVM(Vehicles vehicle)
         {
             return new VehicleViewModel
             {
@@ -19,14 +19,13 @@ namespace WebAutopark.Mappers
                 VehicleTypeId = vehicle.VehicleTypeId,
                 Weight = vehicle.Weight.ToString(),
                 Year = vehicle.Year.ToString(),
-                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name,
+                VehicleTypeName = vehicle.VehicleTypeName,
                 TankCapacity = vehicle.TankCapacity.ToString()
             };
         }
 
         public static Vehicles MapFromVehiclesVMToVehicles(VehicleViewModel vehicleViewModel, IEnumerable<VehicleTypes> vehicleTypes)
         {
-            var listWithVehicles = new List<Vehicles>();
             var vehicle = new Vehicles
             {
                 Color = vehicleViewModel.Color,
@@ -34,6 +33,7 @@ namespace WebAutopark.Mappers
                 RegistrationNumber = vehicleViewModel.RegistrationNumber,
                 VehicleId = vehicleViewModel.VehicleId,
                 VehicleTypeId = vehicleTypes.Where(q => q.Name == vehicleViewModel.VehicleTypeName).Single().VehicleTypeId,
+                VehicleTypeName = vehicleViewModel.VehicleTypeName
             };
             bool isParsedFuelConsumption = double.TryParse(vehicleViewModel.FuelConsumption, out var fuelConsumption);
             bool isParsedWeight = double.TryParse(vehicleViewModel.Weight, out var weight);
@@ -60,11 +60,10 @@ namespace WebAutopark.Mappers
             {
                 vehicle.TankCapacity = tankCapacity;
             }
-            listWithVehicles.Add(vehicle);
             return vehicle;
         }
 
-        public static ConcreteVehicles MapFromVehicleToConreteVehicle(Vehicles vehicle, IEnumerable<VehicleTypes> vehicleTypes)
+        public static ConcreteVehicles MapFromVehicleToConreteVehicle(Vehicles vehicle)
         {
             return new ConcreteVehicles
             {
@@ -77,7 +76,7 @@ namespace WebAutopark.Mappers
                 VehicleTypeId = vehicle.VehicleTypeId,
                 Weight = vehicle.Weight,
                 Year = vehicle.Year,
-                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == vehicle.VehicleTypeId).Single().Name,
+                VehicleTypeName = vehicle.VehicleTypeName,
                 TankCapacity = vehicle.TankCapacity
             };
         }
@@ -95,11 +94,12 @@ namespace WebAutopark.Mappers
                 Mileage = concreteVehicles.Mileage,
                 Weight = concreteVehicles.Weight,
                 Year = concreteVehicles.Year,
-                TankCapacity = concreteVehicles.TankCapacity
+                TankCapacity = concreteVehicles.TankCapacity,
+                VehicleTypeName = concreteVehicles.VehicleTypeName
             };
         }
 
-        public static VehicleGetByIdViewModel MapFromConcreteVehicleToVehiclesGetByIdVM(ConcreteVehicles concreteVehicles, IEnumerable<VehicleTypes> vehicleTypes)
+        public static VehicleGetByIdViewModel MapFromConcreteVehicleToVehiclesGetByIdVM(ConcreteVehicles concreteVehicles)
         {
             return new VehicleGetByIdViewModel
             {
@@ -112,7 +112,7 @@ namespace WebAutopark.Mappers
                 VehicleTypeId = concreteVehicles.VehicleTypeId,
                 Weight = concreteVehicles.Weight.ToString(),
                 Year = concreteVehicles.Year.ToString(),
-                VehicleTypeName = vehicleTypes.Where(q => q.VehicleTypeId == concreteVehicles.VehicleTypeId).Single().Name,
+                VehicleTypeName = concreteVehicles.VehicleTypeName,
                 TaxPerMonth = concreteVehicles.TaxPerMonth.ToString(),
                 MaxKilometersOnTank = concreteVehicles.MaxKilometersOnTank.ToString(),
                 TankCapacity = concreteVehicles.TankCapacity.ToString()

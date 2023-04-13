@@ -10,6 +10,7 @@ namespace DataLayer.Entities
     {
         public int VehicleId { get; set; }
         public int VehicleTypeId { get; set; }
+        public string VehicleTypeName { get; set; }
         public string Model { get; set; }
         public string? RegistrationNumber { get; set; }
         public double Weight { get; set; }
