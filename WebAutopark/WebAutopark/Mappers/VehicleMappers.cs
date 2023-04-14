@@ -28,7 +28,7 @@ namespace WebAutopark.Mappers
         {
             var vehicle = new Vehicles
             {
-                Color = vehicleViewModel.Color,
+                Color = Enum.Parse<Color>(vehicleViewModel.Color).ToString(),
                 Model = vehicleViewModel.Model,
                 RegistrationNumber = vehicleViewModel.RegistrationNumber,
                 VehicleId = vehicleViewModel.VehicleId,

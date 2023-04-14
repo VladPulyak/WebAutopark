@@ -69,7 +69,7 @@ namespace DataLayer.Repositories
                                 Color nvarchar(50) not null,
                                 FuelConsumption float not null,
                                 TankCapacity int not null,
-                                constraint FK_VehicleTypeId foreign key (VehicleTypeId) references VehicleTypes(VehicleTypeId)
+                                constraint FK_VehicleTypeId foreign key (VehicleTypeId) references VehicleTypes(VehicleTypeId) on delete cascade
                                 )";
                 await connection.ExecuteAsync(sqlQuery);
             }

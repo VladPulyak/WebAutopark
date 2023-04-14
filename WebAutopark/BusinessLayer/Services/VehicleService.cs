@@ -11,12 +11,13 @@ namespace BusinessLayer.Services
     {
         public static void GetTaxPerMonth(ConcreteVehicles concreteVehicles, double taxCoefficient)
         {
-            concreteVehicles.TaxPerMonth = (concreteVehicles.Weight * 0.013) + (taxCoefficient * 30) + 5;
+            var taxPerMonth = (concreteVehicles.Weight * 0.013) + (taxCoefficient * 30) + 5;
+            concreteVehicles.TaxPerMonth = Math.Round(taxPerMonth, 2);
         }
         public static void GetMaxKilometersOnTank(ConcreteVehicles concreteVehicles)
         {
-            concreteVehicles.MaxKilometersOnTank = (concreteVehicles.TankCapacity / concreteVehicles.FuelConsumption) * 100;
+            var maxKilometersOnTank = (concreteVehicles.TankCapacity / concreteVehicles.FuelConsumption) * 100;
+            concreteVehicles.MaxKilometersOnTank = Math.Round(maxKilometersOnTank, 2);
         }
-
     }
 }

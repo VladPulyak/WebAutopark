@@ -1,4 +1,5 @@
-﻿<html lang="en">
+﻿@model VehicleViewModel
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -8,7 +9,7 @@
 
 <body class="BGAddVehicle">
     <div>
-        <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(255,255,255);margin-bottom: 14px;">Add Vehicle</h1>
+        <h1 class="d-flex justify-content-center" style="font-style: italic;font-size: 46px;color: rgb(0,0,0);margin-bottom: 14px;">Add Vehicle</h1>
     </div>
     <form class="justify-content-center" method="post">
         <div class="d-flex justify-content-center align-items-center">
@@ -16,9 +17,8 @@
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-end">
                         <div style="margin-left: 11px;margin-bottom: 8px;">
-                            <label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="VehicleTypeName">Name of VehicleType</label>
+                            <label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="VehicleTypeName">Name of VehicleType</label>
                             <select class="form-control" id="VehicleTypeName" name="VehicleTypeName" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" value="none">
-                                <option selected disabled>Enter vehicle type</option>
                                 @foreach (var name in ViewBag.ListWithVehicleTypes as List<string>)
                                 {
                                     <option>@name</option>
@@ -27,37 +27,40 @@
                         </div>
                     </div>
                     <div class="col-md-6 d-flex justify-content-start">
-                        <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Model">Model</label><input id="Model" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="Model" /></div>
-                    </div>`
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-end">
-                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="RegistrationNumber">Registration Number</label><input id="RegistrationNumber" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="RegistrationNumber" /></div>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-start">
-                        <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Weight">Weight</label><input id="Weight" class="form-control" type="text" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="Weight" /></div>
+                        <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="Model">Model</label><input id="Model" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="Model" /></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-end">
-                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Year">Year</label><input id="Year" class="form-control" type="text" name="Year" style="border-radius: 7px;font-size: 30px;width: 324px;" /></div>
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="RegistrationNumber">Registration Number</label><input id="RegistrationNumber" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="RegistrationNumber" /></div>
                     </div>
                     <div class="col-md-6 d-flex justify-content-start">
-                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Mileage">Mileage</label><input id="Mileage" class="form-control" type="text" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="Mileage" /></div>
+                        <div style="margin-left: 11px;margin-bottom: 8px;color: rgb(48,242,127);"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="Weight">Weight</label><input id="Weight" class="form-control" type="text" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="Weight" /></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-end">
-                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="Color">Color</label><input id="Color" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="Color" /></div>
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="Year">Year</label><input id="Year" class="form-control" type="text" name="Year" style="border-radius: 7px;font-size: 30px;width: 324px;" /></div>
                     </div>
                     <div class="col-md-6 d-flex justify-content-start">
-                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="FuelConsumption">FuelConsumption</label><input id="FuelConsumption" class="form-control" type="text" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="FuelConsumption" /></div>
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="Mileage">Mileage</label><input id="Mileage" class="form-control" type="text" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="Mileage" /></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <div style="margin-left: 11px;margin-bottom: 8px;">
+                            <label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="Color">Color</label>
+                            <select asp-for="Color" asp-items="@Html.GetEnumSelectList(typeof(Color))" class="form-control" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="FuelConsumption">FuelConsumption</label><input id="FuelConsumption" class="form-control" type="text" style="width: 324px;font-size: 30px;border-radius: 7px;" required name="FuelConsumption" /></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(255,255,255);" for="TankCapacity">Tank Capacity</label><input id="TankCapacity" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="TankCapacity" /></div>
+            <div style="margin-left: 11px;margin-bottom: 8px;"><label class="form-label" style="margin-right: 16px;padding: 3px;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;border-radius: 4px;border-width: 1px;font-size: 30px;font-style: italic;color: rgb(0,0,0);" for="TankCapacity">Tank Capacity</label><input id="TankCapacity" class="form-control" type="text" style="border-radius: 7px;border-width: 1px;font-size: 30px;width: 324px;" required name="TankCapacity" /></div>
         </div>
         <div class="d-flex justify-content-center"><button class="btn btn-primary" type="submit" style="margin: 5px;font-size: 25px;margin-top: 10px;background: rgb(68,113,183);border-color: rgb(68,113,183);border-radius: 7px;">Enter</button></div>
     </form>

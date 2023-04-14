@@ -8,8 +8,14 @@ html {
     }
 }
 
-.BGAddVehicle {
+/*.BGAddVehicle {
     background-image: url(../images/bff153e432dfc56a4fa916ea3088f246.jpeg);
+}
+*/
+
+.BGAddVehicle {
+    /*    background-color:rgb(126, 113, 173)*/
+    background-color: rgb(163, 163, 163)
 }
 
 .BGHomePage {
@@ -45,10 +51,14 @@ body {
     height: 100vh;
 }
 
-.BGUpdateVehicle {
+/*.BGUpdateVehicle {
     background-image: url(../images/1658244276_4-phonoteka-org-p-oboi-na-rabochii-stol-mashini-bmv-5.jpg);
+}*/
+.BGUpdateVehicle {
+    background-color: rgb(163, 163, 163)
 }
 
-.BGGetAllVehicles {
+/*/*.BGGetAllVehicles {
     background-image: url(../images/1667515276_6-sportishka-com-p-oboi-mashini-zhiguli-vkontakte-6.jpg);
+*/
 }

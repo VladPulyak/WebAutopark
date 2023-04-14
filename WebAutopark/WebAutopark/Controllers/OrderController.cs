@@ -2,6 +2,7 @@
 using DataLayer.Repositories;
 using DataLayer.Repositories.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebAutopark.Mappers;
 using WebAutopark.Models;
 
@@ -30,14 +31,15 @@ namespace WebAutopark.Controllers
                 listWithComponentNames.Add(component.Name);
             }
             ViewBag.ListWithComponents = listWithComponentNames;
+            var vehicles = await _vehicleRepository.GetAll();
+            ViewBag.ListWithVehicles = vehicles.Select(q => new SelectListItem($"{q.Model} {q.RegistrationNumber}", q.VehicleId.ToString()));
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddOrder(OrderItemViewModel orderItemViewModel)
+        public async Task<IActionResult> AddOrder(OrderItemViewModel orderItemViewModel, int vehicleId)
         {
             var vehicles = await _vehicleRepository.GetAll();
-            var vehicleId = vehicles.Single(q => q.Model == orderItemViewModel.VehicleModelName && q.RegistrationNumber == orderItemViewModel.VehicleRegistrationNumber).VehicleId;
             var order = _ordersRepository.GetAll().Result.SingleOrDefault(q => q.VehicleId == vehicleId);
             if (order is null)
             {
@@ -48,7 +50,6 @@ namespace WebAutopark.Controllers
             await _orderItemsRepository.Add(OrderMappers.MapFromOrderItemVMToOrderItem(orderItemViewModel, components, orderId));
             return RedirectToAction("GetAllOrders", "Order");
         }
-
         public async Task<IActionResult> GetAllOrders()
         {
             var orders = await _ordersRepository.GetAll();

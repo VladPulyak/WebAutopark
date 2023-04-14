@@ -22,7 +22,6 @@ namespace WebAutopark.Controllers
         [HttpPost]
         public async Task<IActionResult> AddVehicle(VehicleViewModel vehicle)
         {
-
             await _vehicleRepository.Add(VehicleMappers.MapFromVehiclesVMToVehicles(vehicle, await _vehicleTypesRepository.GetAll()));
             return RedirectToAction("GetAllVehicles", "Vehicle");
         }
@@ -37,6 +36,7 @@ namespace WebAutopark.Controllers
                 listWithNameOfTypes.Add(vehicleType.Name);
             }
             ViewBag.ListWithVehicleTypes = listWithNameOfTypes;
+
             return View();
         }
         public async Task<IActionResult> DeleteVehicleById(int vehicleId)

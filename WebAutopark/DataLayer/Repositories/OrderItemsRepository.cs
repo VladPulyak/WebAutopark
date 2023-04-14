@@ -42,8 +42,8 @@ namespace DataLayer.Repositories
                                 OrderId int not null,
                                 ComponentId int not null,
                                 Quantity int not null,
-                                constraint FK_OrderId foreign key (OrderId) references Orders(OrderId),
-                                constraint FK_ComponentId foreign key (ComponentId) references Components(ComponentId)
+                                constraint FK_OrderId foreign key (OrderId) references Orders(OrderId) on delete cascade,
+                                constraint FK_ComponentId foreign key (ComponentId) references Components(ComponentId) on delete cascade
                                 )";
                 await connection.ExecuteAsync(sqlQuery);
             }

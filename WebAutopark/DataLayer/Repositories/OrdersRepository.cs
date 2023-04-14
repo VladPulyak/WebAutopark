@@ -41,7 +41,7 @@ namespace DataLayer.Repositories
                                 OrderId int primary key identity(1,1) not null,
                                 VehicleId int not null,
                                 Date datetime not null,
-                                constraint FK_VehicleId foreign key (VehicleId) references Vehicles(VehicleId)
+                                constraint FK_VehicleId foreign key (VehicleId) references Vehicles(VehicleId) on delete cascade
                                 )";
                 await connection.ExecuteAsync(sqlQuery);
             }
